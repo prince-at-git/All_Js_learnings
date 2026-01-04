@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Elements in DOM</title>
+    <style>
+        *{
+            background-color: rgb(23, 22, 22);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const div = document.createElement('div');
+        console.log(div);
+        div.className = 'main'
+        div.id = Math.round(Math.random()*10+1)
+        div.setAttribute('title',"generated")
+        div.style.backgroundColor = "green"
+        div.style.padding = "12px"
+        // div.innerText = "Learning w/o chai our code" // this is not optimal as this overwrites rather then setting the value-- which is not optimized
+        
+        //optimal way of adding text    
+        const addText = document.createTextNode("Learning w/o chai our code")
+        div.appendChild(addText)
+
+        // all the above code puts div in a memory to VISUALIZE it we use:-
+        document.body.appendChild(div)
+
+    </script>
+</body>
+</html>

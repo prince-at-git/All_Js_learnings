@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learing DOM</title>
+    <style>
+        *{
+            background-color: rgb(23, 22, 22);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+    </div>
+    <script>
+        
+        const parentClass = document.querySelector(".parent")
+        // console.log(parentClass.children);
+        // console.log(parentClass.children[0].textContent);
+
+        for(let i = 0; i<= parentClass.children.length; i++){
+            // console.log(parentClass.children[i].innerHTML);
+        };
+
+        //.firstElementChild
+        console.log(parentClass.firstElementChild.textContent);// Mon
+        console.log(parentClass.lastElementChild.textContent);// Tue
+
+        console.log("node: ", parentClass.childNodes);// this is very intersting -> prints all the "nodes"
+        
+
+
+    </script>
+</body>
+</html>
