@@ -1,4 +1,5 @@
 //arrow function in js is the new way of function declaration
+// this remembers the context inside the scope/ block it's in.
 
 const user = {
     userName : "Prince",
@@ -27,9 +28,8 @@ function chai(){
 // chai();
 
 
+// --------------------------------------------ARROW function-------------------------------------------------------------------------------------------------
 
-
-// ARROW function-------------------------------------------------------------------------------------------------
 /*Syntax*
  1.  () => expression
 
