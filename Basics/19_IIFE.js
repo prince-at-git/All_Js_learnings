@@ -3,7 +3,7 @@
 
 /*Key points*
  - ";" semicolumn is very import to give so that the other IIFE could be executed as well
- - "()()" the first () is where fnc is written & the second () is the incoker that could also hold args to pass as parameter
+ - "()()" the first () is where fnc is written & the second () is the invoker that could also hold args to pass as parameter
  - named IIFE ->(function name(){})()
  - unNamed IIFE 'arrow function' -> (()=>{})()
 */
