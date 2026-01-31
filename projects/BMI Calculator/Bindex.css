@@ -77,6 +77,14 @@ button:active {
   font-size: 25px;
 }
 
+#result{
+  background-color: burlywood;
+  color: black;
+  padding: 1.3rem;
+  size: 1.5em;
+}
+
+
 h1 {
   padding-left: 15px;
   padding-top: 25px;
