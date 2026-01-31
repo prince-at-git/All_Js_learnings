@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM reviewing</title>
+    <style>
+        *{
+            background-color: rgb(23, 22, 22);
+            color: aliceblue;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>This is a LIST</h2>
+    <ul class="langs">
+        <li>javaScript</li>
+    </ul>
+    
+</body>
+<script>
+    
+    const langs = document.querySelector(".langs");
+    
+    // let content = "Ruby"
+    // const item = document.createElement("li");
+    // item.innerHTML = `${content}`;
+
+    // langs.appendChild(item);
+
+    // console.log(langs);
+
+    // document.body.appendChild(langs);
+    
+    // this is my name is prince soni
+
+    function additems(...content){
+        for(let i = 0; i < content.length; i++){
+            const item = document.createElement('li');
+            item.innerHTML = `${content[i]}`;
+            langs.appendChild(item);
+        }
+    }
+
+
+    additems("ruby", "js", "golang","abc","fdsfasdf","sdjfhsj")
+    
+
+    document.body.appendChild(langs)
+
+</script>
+</html>
+
+
+
+

@@ -23,6 +23,13 @@
         // console.log(parentClass.children);6h7
         // console.log(parentClass.children[0].textContent);
 
+        const dayOne = document.querySelector('.day')
+        
+        console.log(dayOne);
+        console.log(dayOne.parentElement);// gives the parent container name
+        console.log(dayOne.nextElementSibling);//next element/div
+
+
         for(let i = 0; i<= parentClass.children.length; i++){
             // console.log(parentClass.children[i].innerHTML);
         };
@@ -30,6 +37,9 @@
         //.firstElementChild
         console.log(parentClass.firstElementChild.textContent);// Mon
         console.log(parentClass.lastElementChild.textContent);// Tue
+      
+
+
 
         console.log("node: ", parentClass.childNodes);// this is very intersting -> prints all the "nodes"
     </script>
