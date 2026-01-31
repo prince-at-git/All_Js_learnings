@@ -31,15 +31,40 @@ form.addEventListener('submit', function(e){
     const result = document.querySelector('#result')
 
     if( height <=0 || isNaN(height)){
-        result.innerHTML = "Please inter a valid height"
+        result.innerHTML = "Please enter a valid height"
     } else if( weight <=0 || isNaN(weight)){
-        result.innerHTML = "Please inter a valid weight "
+        result.innerHTML = "Please enter a valid weight "
     } else{
         const bmi = (weight/((height*height)/10000)).toFixed(2)// to fixed:- to get value till 2 decimal point
 
         // show the result
-        result.innerHTML = `<span>${bmi}</span>`
-
+        result.innerHTML = `<span>${bmi}</span>`;
+        
+        // we want to validate the if statements after the form has been submitted 
+        if(bmi < 18.6 && bmi !== 0){
+            guidePicker("#under");
+        }else if (bmi >= 18.6 && bmi <= 24.9){
+            guidePicker("#normal");
+        }
+        else if(bmi > 24.9){
+            guidePicker("#over")
+        }
+        else{
+            result.innerHTML = "Error: 404";
+        }
+            
     }
+    
 })
+
+function guidePicker(value){
+    const range = document.querySelector(value);
+    range.style.backgroundColor = "burlywood";
+    range.style.borderRadius = "20px";
+}
+
+
+
+
+
 

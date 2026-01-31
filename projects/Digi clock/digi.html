@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            color: rgb(220, 218, 216);
+        }
+
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        .center{
+            /* margin-right: 7px; */
+        }
+
+        #clock{
+            background-color: rgb(255, 213, 24);
+            color: black;
+            width: 33vw;
+            height: 18vh;
+            font-size: 4em;
+            z-index: 1;
+            padding: 10px 20px;
+            border-radius: 10px;
+            /* margin-left: 7px; */
+            border: 5px solid rgb(255, 166, 0);
+        }
+        #banner{
+            font-size: 2em;
+            /* background-color: bisque; */
+        }
+
+        span{
+            /* background-color: blue; */
+            margin-left: 0%;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="center">
+        <div id="banner"><span>Local time:</span></div>
+        <div id="clock"></div>
+    </div>
+
+    <script src="digi.js"></script>
+</body>
+</html>
