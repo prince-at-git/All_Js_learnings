@@ -13,8 +13,8 @@ let randomNumber = parseInt(Math.random()* 100 + 1);
 
 const submit = document.querySelector('#subt');
 const userInput = document.querySelector('#guessField');
-const guessSlot = document.querySelector('.guesses');
-const lastResult = document.querySelector('.lastResult');
+const guessSlot = document.querySelector('.prevGuess');
+const remaining = document.querySelector('.remaining');
 const lowOrHi = document.querySelector('.lowOrHi');
 
 const startOver = document.querySelector('.resultParas');// will come in handy, after the user has exhausted their attempts
@@ -28,8 +28,8 @@ let numGuess = 1;
 let playGame = true;// in these kind of games we need to have a "play" value if it's true then only we proceed furthur
 
 if(playGame){
-    addEventListener('click',function (e){
-        e.preventDefault;// to prevent the form from sending the data to a server(it's default behaviour)
+    submit.addEventListener('click',function (e){
+        e.preventDefault();// to prevent the form from sending the data to a server(it's default behaviour)
         const guess = parseInt(userInput.value);
         console.log(guess)
         validateGuess(guess);
@@ -47,7 +47,7 @@ function validateGuess(guess){
     } else if(guess > 100){
         alert('please enter a number less than 100')
     } else{
-        prevGuess.push();
+        prevGuess.push(guess);
         if(numGuess === 11 || numGuess >10){
             displayGuess(guess);
             displayMessage(`Game Over. Random number was ${randomNumber}`);
@@ -59,7 +59,7 @@ function validateGuess(guess){
     }
 }
 
-function checkGuess(){
+function checkGuess(guess){
     // to check if user input == random no.
     if(guess === randomNumber ){
         displayMessage(`You guessed it right`);
@@ -72,7 +72,7 @@ function checkGuess(){
 
 }
 
-function displayGuess(){
+function displayGuess(guess){
     //
     userInput.value = '';// to clean the value; so that user can guess again
     guessSlot.innerHTML += `${guess},`
@@ -92,7 +92,6 @@ function newGame(){
     p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
     startOver.appendChild(p);
     playGame = false;
-    newGame();
 }
 
 function endGame(){
@@ -104,9 +103,10 @@ function endGame(){
         guessSlot.innerHTML = '';
         remaining.innerHTML = `${11 - numGuess}`
         userInput.removeAttribute("disabled")
-        startOver.removeChild
+        startOver.removeChild(p)
         playGame = true;
     })
+    newGame();
 }
 
 
